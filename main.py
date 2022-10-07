@@ -9,26 +9,23 @@ num_letters = int(input("How many letters would you like in your password?\n"))
 num_numbers = int(input("How many numbers would you like in your password?\n"))
 num_symbols = int(input("How many symbols would you like in your password?\n"))
 
-pw_letters = ""
+pw_letters = []
 for character in range(0, num_letters):
-    pw_letters += random.choice(letters)
+    pw_letters.append(random.choice(letters))
 
-pw_numbers = ""
+pw_numbers = []
 for num in range(0, num_numbers):
-    pw_numbers += random.choice(numbers)
+    pw_numbers.append(random.choice(numbers))
 
-pw_symbols = ""
+pw_symbols = []
 for sym in range(0, num_symbols):
-    pw_symbols += random.choice(symbols)
+    pw_symbols.append(random.choice(symbols))
 
-easy_pw = pw_letters + pw_numbers + pw_symbols
+#insert ordered passwords into a single list to shuffle
+temp_pw = pw_letters + pw_numbers + pw_symbols
+random.shuffle(temp_pw)
 
-#create list of characters from the easy_pw characters so they can be randomly ordered for the hard_pw
-pw_list = []
-for letter in easy_pw:
-    pw_list.append(letter)
-
-hard_pw = ""
-for n in range(0, len(pw_list)):
-    hard_pw += random.choice(pw_list)
-print(hard_pw)
+final_pw = ""
+for n in range(0, len(temp_pw)):
+    final_pw += temp_pw[n]
+print(final_pw)
