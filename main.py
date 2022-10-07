@@ -11,15 +11,15 @@ num_symbols = int(input("How many symbols would you like in your password?\n"))
 
 pw_letters = ""
 for character in range(0, num_letters):
-    pw_letters = pw_letters + random.choice(letters)
+    pw_letters += random.choice(letters)
 
 pw_numbers = ""
 for num in range(0, num_numbers):
-    pw_numbers = pw_numbers + random.choice(numbers)
+    pw_numbers += random.choice(numbers)
 
 pw_symbols = ""
 for sym in range(0, num_symbols):
-    pw_symbols = pw_symbols + random.choice(symbols)
+    pw_symbols += random.choice(symbols)
 
 easy_pw = pw_letters + pw_numbers + pw_symbols
 
