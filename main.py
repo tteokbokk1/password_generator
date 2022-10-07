@@ -9,8 +9,6 @@ num_letters = int(input("How many letters would you like in your password?\n"))
 num_numbers = int(input("How many numbers would you like in your password?\n"))
 num_symbols = int(input("How many symbols would you like in your password?\n"))
 
-pw_length = num_letters + num_numbers + num_symbols
-
 pw_letters = ""
 for character in range(0, num_letters):
     pw_letters = pw_letters + random.choice(letters)
@@ -25,7 +23,7 @@ for sym in range(0, num_symbols):
 
 easy_pw = pw_letters + pw_numbers + pw_symbols
 
-#create list to of the easy_pw characters to select from and then randomly order the characters
+#create list of characters from the easy_pw characters so they can be randomly ordered for the hard_pw
 pw_list = []
 for letter in easy_pw:
     pw_list.append(letter)
